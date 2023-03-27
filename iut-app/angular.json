@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hello-world": {
+    "iut-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/hello-world",
+            "outputPath": "dist/iut-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.sass"
             ],
             "scripts": []
@@ -65,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hello-world:build:production"
+              "browserTarget": "iut-app:build:production"
             },
             "development": {
-              "browserTarget": "hello-world:build:development"
+              "browserTarget": "iut-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hello-world:build"
+            "browserTarget": "iut-app:build"
           }
         },
         "test": {
@@ -93,6 +94,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.sass"
             ],
             "scripts": []
@@ -102,6 +104,6 @@
     }
   },
   "cli": {
-    "analytics": "92fc325e-0667-4de7-bec5-485c26524cc3"
+    "analytics": "8c208cca-9e89-49fc-9ec0-3fd173101fdc"
   }
 }

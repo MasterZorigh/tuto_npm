@@ -1,5 +1,5 @@
 // Import du modèle student
-var Student = require("../models/student");
+var student = require("../models/student");
 
 // Import de express-validator
 const { param, body, validationResult } = require("express-validator");

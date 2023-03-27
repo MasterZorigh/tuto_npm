@@ -1,3 +1,10 @@
-{{ title }}
+{{ title | uppercase }}
 
 <input type="text" [(ngModel)]="title" />
+<ul>
+  <li *ngFor="let list of listLetters">
+    {{ list }}
+  </li>
+</ul>
+
+{{ students | async | json }}
