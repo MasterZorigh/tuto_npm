@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Student } from '../../models/student';
 import { StudentService } from '../../services/student.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-student-details',
@@ -15,16 +16,23 @@ export class StudentDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private studentService: StudentService
+    private studentService: StudentService,
+    private location: Location
   ) {
-    route.params.subscribe((params) => {
-      this.studentId = params['id'];
-    });
+    this.studentId = +this.route.snapshot.paramMap.get('id') ;
   }
   
   ngOnInit(): void {
     if (this.studentId) {
       this.student$ = this.studentService.getById(this.studentId);
     }
+  }
+
+  goBack() {
+    this.location.back();
+  }
+
+  showReceivedValue(value: boolean){
+    console.log(value); 
   }
 }

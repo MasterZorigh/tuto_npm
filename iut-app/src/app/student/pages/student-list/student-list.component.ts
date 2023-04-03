@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { GenericPopupComponent } from 'src/app/shared/components/generic-popup/generic-popup.component';
 import { StudentFormComponent } from '../../components/student-form/student-form.component';
@@ -27,7 +28,8 @@ export class StudentListComponent implements OnInit, OnDestroy {
   constructor(
     private studentService: StudentService,
     private dialog: MatDialog,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -97,7 +99,7 @@ export class StudentListComponent implements OnInit, OnDestroy {
       });
   }
 
-  showStudentDetails(id: number) {
-    console.log(id);
+  showStudentDetails(studentId: number) {
+    this.router.navigate(['/students/' + studentId]);
   }
 }
