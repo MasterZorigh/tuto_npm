@@ -96,4 +96,8 @@ export class StudentListComponent implements OnInit, OnDestroy {
         }
       });
   }
+
+  showStudentDetails(id: number) {
+    console.log(id);
+  }
 }

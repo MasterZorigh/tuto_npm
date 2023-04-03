@@ -7,12 +7,14 @@ import { SharedModule } from '../shared/shared.module';
 import { StudentListComponent } from './pages/student-list/student-list.component';
 import { StudentService } from './services/student.service';
 import { StudentFormComponent } from './components/student-form/student-form.component';
+import { StudentDetailsComponent } from './pages/student-details/student-details.component';
 
 @NgModule({
   declarations: [
     StudentComponent,
     StudentListComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    StudentDetailsComponent
   ],
   imports: [
     CommonModule,

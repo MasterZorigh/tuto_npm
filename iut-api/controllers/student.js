@@ -83,7 +83,7 @@ exports.create = [
   checkValidity,
   (req, res, next) => {
     // Création de la nouvelle instance de student à ajouter
-    var student = new Student({
+    var student = new student({
       _id: req.body.id,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
